@@ -2,12 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<!-- The parent element in the Spring Boot pom.xml provides
+	default configurations and dependency management. -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+	<!--
+      Project Metadata:
+      Defines the group ID, artifact ID, version, name, and description of the project.
+      Includes placeholders for URL, licenses, developers, and source code management (SCM) details.
+    -->
 	<groupId>com.embrapii</groupId>
 	<artifactId>CanopyNavigator</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -26,10 +34,30 @@
 		<tag/>
 		<url/>
 	</scm>
+	<!--
+      Properties:
+      - Defines the Java version, JTS version, and GeoTools version used in the project.
+      - Sets the source encoding for the project.
+      - Configures Maven to skip deployment.
+    -->
 	<properties>
 		<java.version>21</java.version>
+<!--		<jts.version>1.16.1</jts.version>-->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<geotools.version>31-SNAPSHOT</geotools.version>
+		<maven.deploy.skip>true</maven.deploy.skip>
 	</properties>
+	<!--
+      Dependencies:
+      - Specifies the libraries and frameworks required by the project, including Spring Boot, JPA, PostgreSQL, H2, JTS, GeoTools, and testing libraries.
+      - Configures the scope of each dependency (e.g., runtime, test) and manages versions.
+    -->
 	<dependencies>
+		<!-- Spring Boot dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -42,22 +70,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-docker-compose</artifactId>
 			<scope>runtime</scope>
 			<optional>true</optional>
-		</dependency>
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -69,8 +86,63 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Data Base dependencies -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<!-- JTS dependencies -->
+<!--		<dependency>-->
+<!--			<groupId>org.locationtech.jts</groupId>-->
+<!--			<artifactId>jts-core</artifactId>-->
+<!--			<version>${jts.version}</version>-->
+<!--		</dependency>-->
+		<!-- GeoTools dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-shapefile</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.geotools</groupId>
+			<artifactId>gt-swing</artifactId>
+			<version>${geotools.version}</version>
+		</dependency>
 	</dependencies>
 
+	<repositories>
+		<repository>
+			<id>osgeo</id>
+			<name>OSGeo Release Repository</name>
+			<url>https://repo.osgeo.org/repository/release/</url>
+			<snapshots><enabled>false</enabled></snapshots>
+			<releases><enabled>true</enabled></releases>
+		</repository>
+		<repository>
+			<id>osgeo-snapshot</id>
+			<name>OSGeo Snapshot Repository</name>
+			<url>https://repo.osgeo.org/repository/snapshot/</url>
+			<snapshots><enabled>true</enabled></snapshots>
+			<releases><enabled>false</enabled></releases>
+		</repository>
+	</repositories>
+	<!--
+      Build Section:
+      - Configures plugins used during the build process, including the Maven compiler, Javadoc, and Spring Boot plugins.
+      - Manages plugin versions and execution phases to control the build lifecycle.
+    -->
 	<build>
 		<plugins>
 			<plugin>
@@ -102,7 +174,124 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<inherited>true</inherited>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.3</version>
+			</plugin>
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.6.3</version>
+
+				<configuration>
+					<source>11</source>
+					<!-- Specifies whether the version text is included.-->
+					<version>false</version>
+					<!-- Omit qualifying package name before class names in output.-->
+					<noqualifier>all</noqualifier>
+					<!-- Shuts off non-error and non-warning messages.-->
+					<quiet>true</quiet>
+					<!-- The maximum Java heap size to be used to run javadoc. -->
+					<!--suppress UnresolvedMavenProperty -->
+					<maxmemory>${javadoc.maxHeapSize}</maxmemory>
+					<!-- Specifies the encoding name of the source files.-->
+					<encoding>UTF-8</encoding>
+					<!-- Set an additional parameter for the command line. -->
+					<additionalOptions>-keywords</additionalOptions>
+					<breakiterator>true</breakiterator>
+					<excludePackageNames>org.geotools.resources:org.geotools.maven:com:net.opengis:org.w3:javax:it.geosolutions</excludePackageNames>
+
+					<!-- Enables the Javadoc tool to interpret a simple, one-argument -->
+					<!-- custom block tag tagname in doc comments. Note: <placement/> -->
+					<!-- should be a combination of the letters Xaoptcmf.             -->
+					<tags>
+						<tag>
+							<name>todo</name>
+							<placement>a</placement>
+							<head>TODO:</head>
+						</tag>
+						<tag>
+							<name>todo:</name>
+							<placement>a</placement>
+							<head>TODO:</head>
+						</tag>
+						<tag>
+							<name>TODO</name>
+							<placement>a</placement>
+							<head>TODO:</head>
+						</tag>
+						<tag>
+							<name>task</name>
+							<placement>tfmc</placement>
+							<head>TODO:</head>
+						</tag>
+						<tag>
+							<name>revisit</name>
+							<placement>tfmc</placement>
+							<head>TODO:</head>
+						</tag>
+						<tag>
+							<name>generated</name>
+							<placement>Xt</placement>
+							<head>Generated</head>
+						</tag>
+						<tag>
+							<name>UML</name>
+							<placement>a</placement>
+							<head>UML:</head>
+						</tag>
+						<tag>
+							<name>uml.property</name>
+							<placement>a</placement>
+							<head>UML property:</head>
+						</tag>
+						<tag>
+							<name>generated</name>
+							<placement>X</placement>
+						</tag>
+					</tags>
+
+					<!-- Creates links to existing javadoc-generated         -->
+					<!-- documentation of external referenced classes.       -->
+					<links>
+						<link>https://docs.oracle.com/javase/11/docs/api/</link>
+						<link>https://javaee.github.io/javaee-spec/javadocs/</link>
+						<link>https://locationtech.github.io/jts/javadoc/</link>
+					</links>
+				</configuration>
+				<!-- only works with package javadoc:aggregate for use of META-INF/MANIFEST.MF Automatic-Module-Name -->
+				<reportSets>
+					<reportSet>
+						<id>aggregate</id>
+						<reports>
+							<report>aggregate</report>
+						</reports>
+						<inherited>false</inherited>
+					</reportSet>
+					<reportSet>
+						<id>default</id>
+						<reports>
+							<report>javadoc</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
 
 </project>
