@@ -8,6 +8,8 @@ public class CanopyNavigatorApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CanopyNavigatorApplication.class, args);
+
+
 	}
 
 }

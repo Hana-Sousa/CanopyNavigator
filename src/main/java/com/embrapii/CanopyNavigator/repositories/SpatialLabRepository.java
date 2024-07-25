@@ -1,5 +1,6 @@
-package com.embrapii.CanopyNavigator.Repositories;
+package com.embrapii.CanopyNavigator.repositories;
 
+import com.embrapii.CanopyNavigator.entities.SpatialLab;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -8,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * Creating entities alone will not have any effect.
  */
 @Repository
-public interface SpatialLabRepository extends JpaRepository<SpatialLabRepository,Long > {
+public interface SpatialLabRepository extends JpaRepository<SpatialLab,Long > {
 }

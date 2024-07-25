@@ -3,20 +3,24 @@ package com.embrapii.CanopyNavigator.entities;
 import jakarta.persistence.*;
 import org.locationtech.jts.geom.*;
 
+
 import java.io.Serializable;
+import java.util.Objects;
 
 @Entity
-@Table(name="spatial_lab")
+@Table(name = "spatial_lab")
 public class SpatialLab implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "spatial_seq_gen")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE )
     @SequenceGenerator(name = "spatial_seq_gen", sequenceName = "spatial_seq", allocationSize = 1)
     Long id;
 
     @Column(name = "point")
     Point point;
+
     @Column(name = "multipoint")
     MultiPoint multiPoint;
+
     @Column(name = "linestring")
     private LineString lineString;
 
@@ -94,5 +98,18 @@ public class SpatialLab implements Serializable {
 
     public void setGeometryCollection(GeometryCollection geometryCollection) {
         this.geometryCollection = geometryCollection;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SpatialLab that = (SpatialLab) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
