@@ -86,6 +86,19 @@
 			<artifactId>spring-restdocs-mockmvc</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-spatial -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-spatial</artifactId>
+			<version>6.5.2.Final</version>
+			<type>pom</type>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.5.2.Final</version>
+		</dependency>
 		<!-- Data Base dependencies -->
 		<dependency>
 			<groupId>com.h2database</groupId>
@@ -97,12 +110,6 @@
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-		<!-- JTS dependencies -->
-<!--		<dependency>-->
-<!--			<groupId>org.locationtech.jts</groupId>-->
-<!--			<artifactId>jts-core</artifactId>-->
-<!--			<version>${jts.version}</version>-->
-<!--		</dependency>-->
 		<!-- GeoTools dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
