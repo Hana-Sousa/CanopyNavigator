@@ -10,6 +10,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "spatial_lab")
 public class SpatialLab implements Serializable {
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE )
     @SequenceGenerator(name = "spatial_seq_gen", sequenceName = "spatial_seq", allocationSize = 1)
@@ -35,6 +36,20 @@ public class SpatialLab implements Serializable {
 
     @Column(name = "geometrycollection")
     private GeometryCollection geometryCollection;
+
+    public SpatialLab() {
+    }
+
+    public SpatialLab(Long id, Point point, MultiPoint multiPoint, LineString lineString, MultiLineString multiLineString, Polygon polygon, MultiPolygon multiPolygon, GeometryCollection geometryCollection) {
+        this.id = id;
+        this.point = point;
+        this.multiPoint = multiPoint;
+        this.lineString = lineString;
+        this.multiLineString = multiLineString;
+        this.polygon = polygon;
+        this.multiPolygon = multiPolygon;
+        this.geometryCollection = geometryCollection;
+    }
 
     public Long getId() {
         return id;
