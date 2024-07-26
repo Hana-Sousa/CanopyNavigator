@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("test")
-public class TestConfig1 implements CommandLineRunner {
+public class TestConfig implements CommandLineRunner {
     // Commit
     @Autowired
     private SpatialLabRepository spatialLabRepository;
