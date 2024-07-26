@@ -2,7 +2,6 @@ package com.embrapii.CanopyNavigator.config;
 
 import com.embrapii.CanopyNavigator.entities.SpatialLab;
 import com.embrapii.CanopyNavigator.repositories.SpatialLabRepository;
-
 import org.locationtech.jts.geom.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,7 +11,7 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @Profile("test")
-public class TestConfig implements CommandLineRunner {
+public class TestConfig1 implements CommandLineRunner {
     // Commit
     @Autowired
     private SpatialLabRepository spatialLabRepository;
