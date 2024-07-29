@@ -16,26 +16,26 @@ import java.util.Optional;
 public class GeoSpatialFeatureResource {
 
     @Autowired
-    private GeoSpatialFeatureService geoDataManagementService;
+    private GeoSpatialFeatureService geoSpatialFeatureService;
 
     @PostMapping
     public ResponseEntity<GeoSpatialFeature> createFeature(@RequestParam String name,
                                                            @RequestParam int population,
                                                            @RequestParam double latitude,
                                                            @RequestParam double longitude) {
-        GeoSpatialFeature feature = geoDataManagementService.createFeature(name, population, latitude, longitude);
+        GeoSpatialFeature feature = geoSpatialFeatureService.createFeature(name, population, latitude, longitude);
         return new ResponseEntity<>(feature, HttpStatus.CREATED);
     }
 
     @GetMapping
     public ResponseEntity<List<GeoSpatialFeature>> getAllFeatures() {
-        List<GeoSpatialFeature> features = geoDataManagementService.getAllFeatures();
+        List<GeoSpatialFeature> features = geoSpatialFeatureService.getAllFeatures();
         return ResponseEntity.ok(features);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<GeoSpatialFeature> getFeatureById(@PathVariable Long id) {
-        Optional<GeoSpatialFeature> feature = geoDataManagementService.getFeatureById(id);
+        Optional<GeoSpatialFeature> feature = geoSpatialFeatureService.getFeatureById(id);
         return feature.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
@@ -45,7 +45,7 @@ public class GeoSpatialFeatureResource {
                                                            @RequestParam int population,
                                                            @RequestParam double latitude,
                                                            @RequestParam double longitude) {
-        GeoSpatialFeature feature = geoDataManagementService.updateFeature(id, name, population, latitude, longitude);
+        GeoSpatialFeature feature = geoSpatialFeatureService.updateFeature(id, name, population, latitude, longitude);
         if (feature != null) {
             return ResponseEntity.ok(feature);
         } else {
@@ -55,7 +55,7 @@ public class GeoSpatialFeatureResource {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteFeature(@PathVariable Long id) {
-        boolean deleted = geoDataManagementService.deleteFeature(id);
+        boolean deleted = geoSpatialFeatureService.deleteFeature(id);
         if (deleted) {
             return ResponseEntity.ok().build();
         } else {
