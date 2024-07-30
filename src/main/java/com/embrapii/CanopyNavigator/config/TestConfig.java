@@ -1,6 +1,6 @@
 package com.embrapii.CanopyNavigator.config;
 
-import com.embrapii.CanopyNavigator.entities.SpatialLab;
+import com.embrapii.CanopyNavigator.moldels.SpatialLab;
 import com.embrapii.CanopyNavigator.repositories.SpatialLabRepository;
 import org.locationtech.jts.geom.*;
 import org.springframework.beans.factory.annotation.Autowired;

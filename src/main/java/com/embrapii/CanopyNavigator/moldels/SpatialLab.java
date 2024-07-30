@@ -1,4 +1,4 @@
-package com.embrapii.CanopyNavigator.entities;
+package com.embrapii.CanopyNavigator.moldels;
 
 import jakarta.persistence.*;
 import org.locationtech.jts.geom.*;

@@ -1,38 +1,8 @@
 package com.embrapii.CanopyNavigator.config;
 
-import com.embrapii.CanopyNavigator.entities.SpatialLab;
-import com.embrapii.CanopyNavigator.repositories.SpatialLabRepository;
-import org.geotools.api.data.SimpleFeatureSource;
-import org.geotools.api.data.SimpleFeatureStore;
-import org.geotools.api.data.Transaction;
-import org.geotools.api.feature.simple.SimpleFeature;
-import org.geotools.api.feature.simple.SimpleFeatureType;
-import org.geotools.api.referencing.crs.CoordinateReferenceSystem;
-import org.geotools.data.DefaultTransaction;
-import org.geotools.data.collection.ListFeatureCollection;
-import org.geotools.data.shapefile.ShapefileDataStore;
-import org.geotools.data.shapefile.ShapefileDataStoreFactory;
-import org.geotools.data.simple.SimpleFeatureCollection;
-import org.geotools.feature.simple.SimpleFeatureBuilder;
-import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
-import org.geotools.geometry.jts.JTSFactoryFinder;
-import org.geotools.referencing.CRS;
-import org.geotools.swing.data.JFileDataStoreChooser;
-import org.locationtech.jts.geom.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-
-import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 @Configuration

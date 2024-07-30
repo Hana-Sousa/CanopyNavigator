@@ -1,7 +1,7 @@
 package com.embrapii.CanopyNavigator.services;
 
 
-import com.embrapii.CanopyNavigator.entities.GeoSpatialFeature;
+import com.embrapii.CanopyNavigator.moldels.GeoSpatialFeature;
 import com.embrapii.CanopyNavigator.repositories.GeoSpatialFeatureRepository;
 import org.geotools.api.feature.simple.SimpleFeatureType;
 import org.geotools.api.referencing.crs.CoordinateReferenceSystem;

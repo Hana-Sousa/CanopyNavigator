@@ -1,6 +1,6 @@
 package com.embrapii.CanopyNavigator.resources;
 
-import com.embrapii.CanopyNavigator.entities.SpatialLab;
+import com.embrapii.CanopyNavigator.moldels.SpatialLab;
 import com.embrapii.CanopyNavigator.services.SpatialLabService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.embrapii.CanopyNavigator.entities;
+package com.embrapii.CanopyNavigator.moldels;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

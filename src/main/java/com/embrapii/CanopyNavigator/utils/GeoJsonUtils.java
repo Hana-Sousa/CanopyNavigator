@@ -1,7 +1,7 @@
 package com.embrapii.CanopyNavigator.utils;
 
 
-import com.embrapii.CanopyNavigator.entities.GeoSpatialFeature;
+import com.embrapii.CanopyNavigator.moldels.GeoSpatialFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.geotools.api.feature.simple.SimpleFeature;
 import org.geotools.api.feature.simple.SimpleFeatureType;
