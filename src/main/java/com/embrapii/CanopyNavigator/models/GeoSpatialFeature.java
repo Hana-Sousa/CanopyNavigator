@@ -1,15 +1,16 @@
-package com.embrapii.CanopyNavigator.moldels;
+package com.embrapii.CanopyNavigator.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.locationtech.jts.geom.Point;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 
 @Entity
 @Table(name = "geospatial_features")
-public class GeoSpatialFeature {
+public class GeoSpatialFeature implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,14 +36,15 @@ public class GeoSpatialFeature {
         this.longitude = longitude;
     }
 
+    public GeoSpatialFeature() {
+
+    }
+
     public GeoSpatialFeature(String name, int population, double latitude, double longitude) {
         this.name = name;
         this.population = population;
         this.latitude = latitude;
         this.longitude = longitude;
-    }
-
-    public GeoSpatialFeature() {
     }
 
     // Getters and Setters

@@ -1,6 +1,6 @@
 package com.embrapii.CanopyNavigator.repositories;
 
-import com.embrapii.CanopyNavigator.moldels.SpatialLab;
+import com.embrapii.CanopyNavigator.models.SpatialLab;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,7 @@
 package com.embrapii.CanopyNavigator.config;
 
+import com.embrapii.CanopyNavigator.utils.MapUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -8,11 +10,12 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile("dev")
 public class DevConfig implements CommandLineRunner {
-
-
+    @Autowired
+    private MapUtil mapUtil;
 
     @Override
     public void run(String... args) throws Exception {
+        mapUtil.createMapFromDatabase();
 
 //
 //

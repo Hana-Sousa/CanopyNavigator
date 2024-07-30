@@ -797,7 +797,7 @@ Caused by: org.postgresql.util.PSQLException: ERROR: type "geometry" does not ex
 	Validation Mode: AUTO
 	Jar files URLs []
 	Managed classes names [
-		com.embrapii.CanopyNavigator.moldels.SpatialLab]
+		com.embrapii.CanopyNavigator.models.SpatialLab]
 	Mapping files names []
 	Properties []
 2024-07-25T11:14:34.938-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.boot.beanvalidation.BeanValidationIntegrator].
@@ -1015,62 +1015,62 @@ Caused by: org.postgresql.util.PSQLException: ERROR: type "geometry" does not ex
 2024-07-25T11:14:35.276-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> basicType@4(java.time.OffsetTime,3007)
 2024-07-25T11:14:35.276-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@9880a15] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@6febec41]
 2024-07-25T11:14:35.292-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.relational.Namespace      : Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
-2024-07-25T11:14:35.302-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Binding entity from annotated class: com.embrapii.CanopyNavigator.moldels.SpatialLab
+2024-07-25T11:14:35.302-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Binding entity from annotated class: com.embrapii.CanopyNavigator.models.SpatialLab
 2024-07-25T11:14:35.304-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Import with entity name SpatialLab
-2024-07-25T11:14:35.306-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Bind entity com.embrapii.CanopyNavigator.moldels.SpatialLab on table spatial_lab
+2024-07-25T11:14:35.306-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Bind entity com.embrapii.CanopyNavigator.models.SpatialLab on table spatial_lab
 2024-07-25T11:14:35.310-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedDiscriminatorColumn(column='DTYPE')
 2024-07-25T11:14:35.317-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn()
-2024-07-25T11:14:35.317-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.moldels.SpatialLab] is safe
-2024-07-25T11:14:35.317-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.moldels.SpatialLab
+2024-07-25T11:14:35.317-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.models.SpatialLab] is safe
+2024-07-25T11:14:35.317-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.models.SpatialLab
 2024-07-25T11:14:35.318-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property id with lazy=false
-2024-07-25T11:14:35.320-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:id]
+2024-07-25T11:14:35.320-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:id]
 2024-07-25T11:14:35.321-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for id
 2024-07-25T11:14:35.322-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.id
 2024-07-25T11:14:35.323-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property id
 2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.BinderHelper     : #makeIdGenerator(BasicValue([Column(id)]), id, identity, spatial_seq_gen, ...)
 2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='geometrycollection')
 2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property geometryCollection with lazy=false
-2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:geometryCollection]
+2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:geometryCollection]
 2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for geometryCollection
 2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.geometrycollection
 2024-07-25T11:14:35.327-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property geometryCollection
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='linestring')
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property lineString with lazy=false
-2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:lineString]
+2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:lineString]
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for lineString
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.linestring
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property lineString
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='multilinestring')
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property multiLineString with lazy=false
-2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:multiLineString]
+2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:multiLineString]
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for multiLineString
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.multilinestring
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property multiLineString
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='multipoint')
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property multiPoint with lazy=false
-2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:multiPoint]
+2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:multiPoint]
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for multiPoint
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.multipoint
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property multiPoint
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='multipolygon')
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property multiPolygon with lazy=false
-2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:multiPolygon]
+2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:multiPolygon]
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for multiPolygon
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.multipolygon
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property multiPolygon
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='point')
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property point with lazy=false
-2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:point]
+2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:point]
 2024-07-25T11:14:35.328-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for point
 2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.point
 2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property point
 2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='polygon')
 2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property polygon with lazy=false
-2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:polygon]
+2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:polygon]
 2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for polygon
 2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.polygon
 2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property polygon
-2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.r.c.i.ClassLoaderServiceImpl       : HHH000194: Package not found or no package-info.java: com.embrapii.CanopyNavigator.moldels
+2024-07-25T11:14:35.329-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.r.c.i.ClassLoaderServiceImpl       : HHH000194: Package not found or no package-info.java: com.embrapii.CanopyNavigator.models
 2024-07-25T11:14:35.332-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : Starting `BasicValueBinder#fillSimpleValue` for id
 2024-07-25T11:14:35.333-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : Starting `BasicValueBinder#fillSimpleValue` for geometryCollection
 2024-07-25T11:14:35.333-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : Starting `BasicValueBinder#fillSimpleValue` for lineString
@@ -1570,33 +1570,33 @@ Caused by: org.postgresql.util.PSQLException: ERROR: type "geometry" does not ex
 2024-07-25T11:14:35.434-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.orm.query.plan.cache       : Starting QueryInterpretationCache(2048)
 2024-07-25T11:14:35.479-03:00 DEBUG 36941 --- [CanopyNavigator] [main] .h.s.i.SessionFactoryServiceRegistryImpl : EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
 2024-07-25T11:14:35.480-03:00 DEBUG 36941 --- [CanopyNavigator] [main] h.e.i.EntityCopyObserverFactoryInitiator : Configured EntityCopyObserver strategy: disallow
-2024-07-25T11:14:35.517-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.moldels.SpatialLab] is safe
-2024-07-25T11:14:35.517-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.moldels.SpatialLab
-2024-07-25T11:14:35.591-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.i.bytebuddy.BytecodeProviderImpl   : HHH000513: Unable to create the ReflectionOptimizer for [com.embrapii.CanopyNavigator.moldels.SpatialLab]: private accessor [geometryCollection]
+2024-07-25T11:14:35.517-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.models.SpatialLab] is safe
+2024-07-25T11:14:35.517-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.models.SpatialLab
+2024-07-25T11:14:35.591-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.b.i.bytebuddy.BytecodeProviderImpl   : HHH000513: Unable to create the ReflectionOptimizer for [com.embrapii.CanopyNavigator.models.SpatialLab]: private accessor [geometryCollection]
 2024-07-25T11:14:35.612-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.hibernate.orm.model.mapping.creation   : Starting post-init callbacks
-2024-07-25T11:14:35.612-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.hibernate.orm.model.mapping.creation   : Starting PostInitCallbackEntry : Entity(com.embrapii.CanopyNavigator.moldels.SpatialLab) `staticFetchableList` generator
+2024-07-25T11:14:35.612-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.hibernate.orm.model.mapping.creation   : Starting PostInitCallbackEntry : Entity(com.embrapii.CanopyNavigator.models.SpatialLab) `staticFetchableList` generator
 2024-07-25T11:14:35.649-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.create         : Created new SQL alias : sl1_0
-2024-07-25T11:14:35.651-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.create         : Registration of TableGroup [StandardTableGroup(com.embrapii.CanopyNavigator.moldels.SpatialLab)] with identifierForTableGroup [com.embrapii.CanopyNavigator.moldels.SpatialLab] for NavigablePath [com.embrapii.CanopyNavigator.moldels.SpatialLab]
+2024-07-25T11:14:35.651-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.create         : Registration of TableGroup [StandardTableGroup(com.embrapii.CanopyNavigator.models.SpatialLab)] with identifierForTableGroup [com.embrapii.CanopyNavigator.models.SpatialLab] for NavigablePath [com.embrapii.CanopyNavigator.models.SpatialLab]
 2024-07-25T11:14:35.657-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.orm.results.graph.AST      : DomainResult Graph:
- \-EntityResultImpl [com.embrapii.CanopyNavigator.moldels.SpatialLab]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.geometryCollection]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.lineString]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.multiLineString]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.multiPoint]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.multiPolygon]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.point]
- |  \-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.polygon]
+ \-EntityResultImpl [com.embrapii.CanopyNavigator.models.SpatialLab]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.geometryCollection]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.lineString]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.multiLineString]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.multiPoint]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.multiPolygon]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.point]
+ |  \-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.polygon]
 
 2024-07-25T11:14:35.658-03:00 DEBUG 36941 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.tree           : SQL AST Tree:
     SelectStatement {
       FromClause {
-        StandardTableGroup (sl1 : com.embrapii.CanopyNavigator.moldels.SpatialLab) {
+        StandardTableGroup (sl1 : com.embrapii.CanopyNavigator.models.SpatialLab) {
           primaryTableReference : spatial_lab as sl1_0
         }
       }
     }
 
-2024-07-25T11:14:35.662-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     : Static SQL for entity: com.embrapii.CanopyNavigator.moldels.SpatialLab
+2024-07-25T11:14:35.662-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     : Static SQL for entity: com.embrapii.CanopyNavigator.models.SpatialLab
 2024-07-25T11:14:35.662-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     :  Version select: select id from spatial_lab where id=?
 2024-07-25T11:14:35.663-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     :  Insert (0): insert into spatial_lab (geometrycollection,linestring,multilinestring,multipoint,multipolygon,point,polygon,id) values (?,?,?,?,?,?,?,?)
 2024-07-25T11:14:35.663-03:00 DEBUG 36941 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     :  Update (0): update spatial_lab set geometrycollection=?,linestring=?,multilinestring=?,multipoint=?,multipolygon=?,point=?,polygon=? where id=?
@@ -1743,7 +1743,7 @@ Caused by: org.postgresql.util.PSQLException: ERROR: type "geometry" does not ex
 	Validation Mode: AUTO
 	Jar files URLs []
 	Managed classes names [
-		com.embrapii.CanopyNavigator.moldels.SpatialLab]
+		com.embrapii.CanopyNavigator.models.SpatialLab]
 	Mapping files names []
 	Properties []
 2024-07-25T11:19:47.867-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.i.internal.IntegratorServiceImpl     : Adding Integrator [org.hibernate.boot.beanvalidation.BeanValidationIntegrator].
@@ -1961,62 +1961,62 @@ Caused by: org.postgresql.util.PSQLException: ERROR: type "geometry" does not ex
 2024-07-25T11:19:48.196-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.type.BasicTypeRegistry     : Adding type registration java.time.OffsetTime -> basicType@4(java.time.OffsetTime,3007)
 2024-07-25T11:19:48.196-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.type.spi.TypeConfiguration$Scope     : Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@9880a15] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@6febec41]
 2024-07-25T11:19:48.212-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.relational.Namespace      : Created database namespace [logicalName=Name{catalog=null, schema=null}, physicalName=Name{catalog=null, schema=null}]
-2024-07-25T11:19:48.225-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Binding entity from annotated class: com.embrapii.CanopyNavigator.moldels.SpatialLab
+2024-07-25T11:19:48.225-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Binding entity from annotated class: com.embrapii.CanopyNavigator.models.SpatialLab
 2024-07-25T11:19:48.227-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Import with entity name SpatialLab
-2024-07-25T11:19:48.230-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Bind entity com.embrapii.CanopyNavigator.moldels.SpatialLab on table spatial_lab
+2024-07-25T11:19:48.230-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.EntityBinder     : Bind entity com.embrapii.CanopyNavigator.models.SpatialLab on table spatial_lab
 2024-07-25T11:19:48.234-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedDiscriminatorColumn(column='DTYPE')
 2024-07-25T11:19:48.240-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn()
-2024-07-25T11:19:48.241-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.moldels.SpatialLab] is safe
-2024-07-25T11:19:48.241-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.moldels.SpatialLab
+2024-07-25T11:19:48.241-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.models.SpatialLab] is safe
+2024-07-25T11:19:48.241-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.models.SpatialLab
 2024-07-25T11:19:48.242-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property id with lazy=false
-2024-07-25T11:19:48.243-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:id]
+2024-07-25T11:19:48.243-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:id]
 2024-07-25T11:19:48.244-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for id
 2024-07-25T11:19:48.246-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.id
 2024-07-25T11:19:48.246-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property id
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.BinderHelper     : #makeIdGenerator(BasicValue([Column(id)]), id, identity, spatial_seq_gen, ...)
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='geometrycollection')
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property geometryCollection with lazy=false
-2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:geometryCollection]
+2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:geometryCollection]
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for geometryCollection
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.geometrycollection
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property geometryCollection
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='linestring')
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property lineString with lazy=false
-2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:lineString]
+2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:lineString]
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for lineString
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.linestring
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property lineString
 2024-07-25T11:19:48.248-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='multilinestring')
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property multiLineString with lazy=false
-2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:multiLineString]
+2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:multiLineString]
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for multiLineString
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.multilinestring
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property multiLineString
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='multipoint')
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property multiPoint with lazy=false
-2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:multiPoint]
+2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:multiPoint]
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for multiPoint
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.multipoint
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property multiPoint
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='multipolygon')
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property multiPolygon with lazy=false
-2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:multiPolygon]
+2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:multiPolygon]
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for multiPolygon
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.multipolygon
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property multiPolygon
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='point')
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property point with lazy=false
-2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:point]
+2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:point]
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for point
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.point
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property point
 2024-07-25T11:19:48.249-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.AnnotatedColumn  : Binding column: AnnotatedColumn(column='polygon')
 2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : MetadataSourceProcessor property polygon with lazy=false
-2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.moldels.SpatialLab:polygon]
+2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.m.internal.AbstractPropertyHolder  : Attempting to locate auto-apply AttributeConverter for property [com.embrapii.CanopyNavigator.models.SpatialLab:polygon]
 2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : building BasicValue for polygon
 2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.mapping.BasicValue         : Skipping column re-registration: spatial_lab.polygon
 2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.model.internal.PropertyBinder   : Building property polygon
-2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.r.c.i.ClassLoaderServiceImpl       : HHH000194: Package not found or no package-info.java: com.embrapii.CanopyNavigator.moldels
+2024-07-25T11:19:48.250-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.r.c.i.ClassLoaderServiceImpl       : HHH000194: Package not found or no package-info.java: com.embrapii.CanopyNavigator.models
 2024-07-25T11:19:48.252-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : Starting `BasicValueBinder#fillSimpleValue` for id
 2024-07-25T11:19:48.253-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : Starting `BasicValueBinder#fillSimpleValue` for geometryCollection
 2024-07-25T11:19:48.253-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.model.internal.BasicValueBinder    : Starting `BasicValueBinder#fillSimpleValue` for lineString
@@ -2516,33 +2516,33 @@ Caused by: org.postgresql.util.PSQLException: ERROR: type "geometry" does not ex
 2024-07-25T11:19:48.354-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.orm.query.plan.cache       : Starting QueryInterpretationCache(2048)
 2024-07-25T11:19:48.397-03:00 DEBUG 37206 --- [CanopyNavigator] [main] .h.s.i.SessionFactoryServiceRegistryImpl : EventListenerRegistry access via ServiceRegistry is deprecated.  Use `sessionFactory.getEventEngine().getListenerRegistry()` instead
 2024-07-25T11:19:48.398-03:00 DEBUG 37206 --- [CanopyNavigator] [main] h.e.i.EntityCopyObserverFactoryInitiator : Configured EntityCopyObserver strategy: disallow
-2024-07-25T11:19:48.433-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.moldels.SpatialLab] is safe
-2024-07-25T11:19:48.433-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.moldels.SpatialLab
-2024-07-25T11:19:48.509-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.i.bytebuddy.BytecodeProviderImpl   : HHH000513: Unable to create the ReflectionOptimizer for [com.embrapii.CanopyNavigator.moldels.SpatialLab]: private accessor [geometryCollection]
+2024-07-25T11:19:48.433-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : Not known whether passed class name [com.embrapii.CanopyNavigator.models.SpatialLab] is safe
+2024-07-25T11:19:48.433-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.boot.internal.ClassLoaderAccessImpl  : No temp ClassLoader provided; using live ClassLoader for loading potentially unsafe class : com.embrapii.CanopyNavigator.models.SpatialLab
+2024-07-25T11:19:48.509-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.b.i.bytebuddy.BytecodeProviderImpl   : HHH000513: Unable to create the ReflectionOptimizer for [com.embrapii.CanopyNavigator.models.SpatialLab]: private accessor [geometryCollection]
 2024-07-25T11:19:48.531-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.hibernate.orm.model.mapping.creation   : Starting post-init callbacks
-2024-07-25T11:19:48.531-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.hibernate.orm.model.mapping.creation   : Starting PostInitCallbackEntry : Entity(com.embrapii.CanopyNavigator.moldels.SpatialLab) `staticFetchableList` generator
+2024-07-25T11:19:48.531-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.hibernate.orm.model.mapping.creation   : Starting PostInitCallbackEntry : Entity(com.embrapii.CanopyNavigator.models.SpatialLab) `staticFetchableList` generator
 2024-07-25T11:19:48.566-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.create         : Created new SQL alias : sl1_0
-2024-07-25T11:19:48.567-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.create         : Registration of TableGroup [StandardTableGroup(com.embrapii.CanopyNavigator.moldels.SpatialLab)] with identifierForTableGroup [com.embrapii.CanopyNavigator.moldels.SpatialLab] for NavigablePath [com.embrapii.CanopyNavigator.moldels.SpatialLab]
+2024-07-25T11:19:48.567-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.create         : Registration of TableGroup [StandardTableGroup(com.embrapii.CanopyNavigator.models.SpatialLab)] with identifierForTableGroup [com.embrapii.CanopyNavigator.models.SpatialLab] for NavigablePath [com.embrapii.CanopyNavigator.models.SpatialLab]
 2024-07-25T11:19:48.573-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.orm.results.graph.AST      : DomainResult Graph:
- \-EntityResultImpl [com.embrapii.CanopyNavigator.moldels.SpatialLab]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.geometryCollection]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.lineString]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.multiLineString]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.multiPoint]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.multiPolygon]
- |  +-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.point]
- |  \-BasicFetch [com.embrapii.CanopyNavigator.moldels.SpatialLab.polygon]
+ \-EntityResultImpl [com.embrapii.CanopyNavigator.models.SpatialLab]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.geometryCollection]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.lineString]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.multiLineString]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.multiPoint]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.multiPolygon]
+ |  +-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.point]
+ |  \-BasicFetch [com.embrapii.CanopyNavigator.models.SpatialLab.polygon]
 
 2024-07-25T11:19:48.574-03:00 DEBUG 37206 --- [CanopyNavigator] [main] org.hibernate.orm.sql.ast.tree           : SQL AST Tree:
     SelectStatement {
       FromClause {
-        StandardTableGroup (sl1 : com.embrapii.CanopyNavigator.moldels.SpatialLab) {
+        StandardTableGroup (sl1 : com.embrapii.CanopyNavigator.models.SpatialLab) {
           primaryTableReference : spatial_lab as sl1_0
         }
       }
     }
 
-2024-07-25T11:19:48.579-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     : Static SQL for entity: com.embrapii.CanopyNavigator.moldels.SpatialLab
+2024-07-25T11:19:48.579-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     : Static SQL for entity: com.embrapii.CanopyNavigator.models.SpatialLab
 2024-07-25T11:19:48.579-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     :  Version select: select id from spatial_lab where id=?
 2024-07-25T11:19:48.579-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     :  Insert (0): insert into spatial_lab (geometrycollection,linestring,multilinestring,multipoint,multipolygon,point,polygon,id) values (?,?,?,?,?,?,?,?)
 2024-07-25T11:19:48.579-03:00 DEBUG 37206 --- [CanopyNavigator] [main] o.h.p.entity.AbstractEntityPersister     :  Update (0): update spatial_lab set geometrycollection=?,linestring=?,multilinestring=?,multipoint=?,multipolygon=?,point=?,polygon=? where id=?

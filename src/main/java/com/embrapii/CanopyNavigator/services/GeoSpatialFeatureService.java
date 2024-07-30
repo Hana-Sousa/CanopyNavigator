@@ -1,7 +1,7 @@
 package com.embrapii.CanopyNavigator.services;
 
 
-import com.embrapii.CanopyNavigator.moldels.GeoSpatialFeature;
+import com.embrapii.CanopyNavigator.models.GeoSpatialFeature;
 import com.embrapii.CanopyNavigator.repositories.GeoSpatialFeatureRepository;
 import org.geotools.api.feature.simple.SimpleFeatureType;
 import org.geotools.api.referencing.crs.CoordinateReferenceSystem;
@@ -24,10 +24,8 @@ public class GeoSpatialFeatureService {
     @Autowired
     private GeoSpatialFeatureRepository geospatialFeatureRepository;
 
-    private final SimpleFeatureType featureType;
-
     public GeoSpatialFeatureService() throws Exception {
-        this.featureType = defineSchema();
+        SimpleFeatureType featureType = defineSchema();
     }
 
     private SimpleFeatureType defineSchema() throws Exception {

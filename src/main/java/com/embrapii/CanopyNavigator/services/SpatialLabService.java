@@ -1,6 +1,6 @@
 package com.embrapii.CanopyNavigator.services;
 
-import com.embrapii.CanopyNavigator.moldels.SpatialLab;
+import com.embrapii.CanopyNavigator.models.SpatialLab;
 import com.embrapii.CanopyNavigator.repositories.SpatialLabRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

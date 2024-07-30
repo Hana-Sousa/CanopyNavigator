@@ -1,7 +1,7 @@
 package com.embrapii.CanopyNavigator.resources;
 
 
-import com.embrapii.CanopyNavigator.moldels.GeoSpatialFeature;
+import com.embrapii.CanopyNavigator.models.GeoSpatialFeature;
 import com.embrapii.CanopyNavigator.services.GeoSpatialFeatureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

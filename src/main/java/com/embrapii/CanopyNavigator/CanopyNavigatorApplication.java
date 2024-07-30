@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CanopyNavigatorApplication {
 
 	public static void main(String[] args) {
+		System.setProperty("java.awt.headless", "false");
 		SpringApplication.run(CanopyNavigatorApplication.class, args);
 
 
