@@ -15,7 +15,7 @@ public class DevConfig implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        mapUtil.createMapFromDatabase();
+        mapUtil.displayMapFromDatabase();
 
 //
 //

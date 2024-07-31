@@ -1,62 +1,57 @@
 package com.embrapii.CanopyNavigator.utils;
 
-import com.embrapii.CanopyNavigator.services.DatabaseToShapefileService;
 import org.geotools.api.data.FileDataStore;
 import org.geotools.api.data.FileDataStoreFinder;
-
-import org.geotools.api.data.SimpleFeatureSource;
-import org.geotools.map.FeatureLayer;
 import org.geotools.map.Layer;
 import org.geotools.map.MapContent;
-import org.geotools.styling.SLD;
 import org.geotools.api.style.Style;
+import org.geotools.styling.SLD;
 import org.geotools.swing.JMapFrame;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.util.logging.Logger;
 
 @Component
 public class MapUtil {
-
     private static final Logger LOGGER = Logger.getLogger(MapUtil.class.getName());
 
     @Autowired
-    private DatabaseToShapefileService databaseToShapefileService;
+    private ShapefileCreationUtil shapefileCreationUtil;
 
-    public void createMapFromDatabase() throws Exception {
-        // Create a shapefile from the database
-        MultipartFile shapefileMultipart = databaseToShapefileService.createShapefileFromDatabase();
-
-        // Convert MultipartFile to File
-        File shapefile = new File(System.getProperty("java.io.tmpdir") + "/" + shapefileMultipart.getOriginalFilename());
-        shapefileMultipart.transferTo(shapefile);
-
-        // Load the shapefile and display the map
-        FileDataStore store = FileDataStoreFinder.getDataStore(shapefile);
-        SimpleFeatureSource featureSource = store.getFeatureSource();
-
-        // Log the feature source details
-        LOGGER.info("Feature source schema: " + featureSource.getSchema());
-
-        // Create a map content and add our shapefile to it
-        MapContent map = new MapContent();
-        map.setTitle("Database Map");
-
-        // Define the style for the points
-        Style style = SLD.createPointStyle("circle", java.awt.Color.RED, java.awt.Color.BLACK, 1.0f, 10.0f);
-
-        Layer layer = new FeatureLayer(featureSource, style);
-        map.addLayer(layer);
-
+    public void displayMapFromDatabase() {
         try {
-            // Now display the map
-            JMapFrame.showMap(map);
+            File shapefile = shapefileCreationUtil.createShapefileFromDatabase();
+            FileDataStore store = FileDataStoreFinder.getDataStore(shapefile);
+            if (store == null) {
+                LOGGER.severe("Shapefile could not be loaded.");
+                return;
+            }
+
+            Layer layer = createLayerFromStore(store);
+            if (layer == null) {
+                LOGGER.severe("No valid layer found to display on the map.");
+                return;
+            }
+
+            displayMapWithLayer(layer);
         } catch (Exception e) {
             LOGGER.severe("Error displaying map: " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    private Layer createLayerFromStore(FileDataStore store) throws Exception {
+        Style style = SLD.createSimpleStyle(store.getSchema());
+        Layer layer = new org.geotools.map.FeatureLayer(store.getFeatureSource(), style);
+        return layer;
+    }
+
+    private void displayMapWithLayer(Layer layer) {
+        MapContent map = new MapContent();
+        map.setTitle("Database Map");
+        map.addLayer(layer);
+        JMapFrame.showMap(map);
     }
 }

@@ -35,6 +35,7 @@ public class ShapefileCreationUtil {
     public File createShapefileFromDatabase() throws Exception {
         // Retrieve data from the database
         List<GeoSpatialFeature> features = geoSpatialFeatureRepository.findAll();
+        LOGGER.info("Retrieved " + features.size() + " features from the database.");
 
         // Define a SimpleFeatureType
         final SimpleFeatureType TYPE = DataUtilities.createType(
@@ -46,6 +47,7 @@ public class ShapefileCreationUtil {
 
         // Create a temporary shapefile
         File newFile = File.createTempFile("geospatial_features", ".shp");
+        LOGGER.info("Created temporary shapefile: " + newFile.getAbsolutePath());
         newFile.deleteOnExit();
 
         Map<String, Serializable> params = new HashMap<>();
@@ -71,17 +73,18 @@ public class ShapefileCreationUtil {
                 continue;
             }
 
-            SimpleFeature feature = writer.next();
             Point point = geometryFactory.createPoint(new Coordinate(longitude, latitude));
+            SimpleFeature feature = writer.next();
             feature.setAttribute("the_geom", point);
             feature.setAttribute("name", geoSpatialFeature.getName());
             feature.setAttribute("population", geoSpatialFeature.getPopulation());
             writer.write();
         }
 
-        writer.close();
         transaction.commit();
         transaction.close();
+        writer.close();
+        LOGGER.info("Shapefile created successfully.");
 
         return newFile;
     }
