@@ -79,6 +79,9 @@ public class ShapefileCreationUtil {
             feature.setAttribute("name", geoSpatialFeature.getName());
             feature.setAttribute("population", geoSpatialFeature.getPopulation());
             writer.write();
+
+            // Log feature details
+            LOGGER.info("Added feature to shapefile: " + feature);
         }
 
         transaction.commit();
@@ -86,6 +89,7 @@ public class ShapefileCreationUtil {
         writer.close();
         LOGGER.info("Shapefile created successfully.");
 
+        // Return the shapefile path, ensuring the file is accessible
         return newFile;
     }
 }
